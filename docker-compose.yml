@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:16.3-alpine
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB_MAIN: ${DB_NAME}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - ${DB_PORT}:5432
+    volumes:
+      - pg_data:/var/lib/postgresql/data/pgdata
+      - ./scripts/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+    networks:
+      - backend
+
+  redis:
+    image: redis:7.0-alpine
+    volumes:
+      - redis_data:/data
+    ports:
+      - 6379:6379
+    restart: always
+    networks:
+      - backend
+
+networks:
+  backend:
+
+volumes:
+  pg_data:
+  redis_data:
