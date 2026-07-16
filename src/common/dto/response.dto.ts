@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { HttpCodeMessages } from '@src/utils/constants'
+import { HttpCodeMessages } from '@src/shared/constants'
 
 import { PaginationDto } from './pagination.dto'
 

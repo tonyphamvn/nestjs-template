@@ -5,19 +5,19 @@ import { ApiProperty } from '@nestjs/swagger'
 export class User {
   @PrimaryKey()
   @ApiProperty()
-  public id: string
+  public id!: string
 
   @Property()
   @ApiProperty()
-  public email: string
+  public email!: string
 
   @Property()
   @ApiProperty()
-  public username: string
+  public username!: string
 
   @Property({ type: 'timestamp', defaultRaw: 'CURRENT_TIMESTAMP' })
   @ApiProperty()
-  public createdAt: Date = new Date()
+  public createdAt?: Date = new Date()
 
   @Property({
     type: 'timestamp',
@@ -25,7 +25,7 @@ export class User {
     defaultRaw: 'CURRENT_TIMESTAMP',
   })
   @ApiProperty()
-  public updatedAt: Date = new Date()
+  public updatedAt?: Date = new Date()
 
   constructor(data: Partial<User> = {}) {
     Object.assign(this, data)

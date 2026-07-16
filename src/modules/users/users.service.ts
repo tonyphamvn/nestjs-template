@@ -1,16 +1,16 @@
 import { EntityManager } from '@mikro-orm/postgresql'
 import { Inject, Injectable } from '@nestjs/common'
-import { User } from '@src/database/entities'
+import { User } from '@src/infrastructure/database/entities'
 import { WINSTON_MODULE_NEST_PROVIDER, WinstonLogger } from 'nest-winston'
 
 @Injectable()
-export class UserService {
+export class UsersService {
   constructor(
     @Inject(WINSTON_MODULE_NEST_PROVIDER)
     private readonly logger: WinstonLogger,
     private readonly em: EntityManager,
   ) {
-    this.logger.setContext(UserService.name)
+    this.logger.setContext(UsersService.name)
   }
 
   public async getUsers() {

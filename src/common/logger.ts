@@ -2,15 +2,13 @@ import { WinstonLogger, WinstonModule } from 'nest-winston'
 import winston from 'winston'
 import 'winston-daily-rotate-file'
 
-const colorize = (message: unknown) => {
-  return {
-    info: `\x1b[32m${message}\x1b[0m`, // Green
-    log: `\x1b[32m${message}\x1b[0m`, // Green
-    warn: `\x1b[33m${message}\x1b[0m`, // Yellow
-    error: `\x1b[31m${message}\x1b[0m`, // Red
-    debug: `\x1b[36m${message}\x1b[0m`, // Cyan
-  }
-}
+const colorize = (message: unknown): Record<string, string> => ({
+  info: `\x1b[32m${message}\x1b[0m`, // Green
+  log: `\x1b[32m${message}\x1b[0m`, // Green
+  warn: `\x1b[33m${message}\x1b[0m`, // Yellow
+  error: `\x1b[31m${message}\x1b[0m`, // Red
+  debug: `\x1b[36m${message}\x1b[0m`, // Cyan
+})
 
 export const winstonFormatLog = winston.format.combine(
   winston.format.timestamp({ format: 'MM/DD/YYYY, HH:mm:ss' }),

@@ -2,12 +2,12 @@ import { BullModule } from '@nestjs/bullmq'
 import { CacheModule } from '@nestjs/cache-manager'
 import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
-import { createQueueConfig } from '@src/app.config'
 import config from '@src/config'
+import { createQueueConfig } from '@src/config/queue.config'
 import { WinstonLogger } from 'nest-winston'
 
-import { UserController } from './user.controller'
-import { UserService } from './user.service'
+import { UsersController } from './users.controller'
+import { UsersService } from './users.service'
 
 @Module({
   imports: [
@@ -19,8 +19,8 @@ import { UserService } from './user.service'
       inject: [ConfigService],
     }),
   ],
-  controllers: [UserController],
-  providers: [UserService, WinstonLogger],
-  exports: [UserService],
+  controllers: [UsersController],
+  providers: [UsersService, WinstonLogger],
+  exports: [UsersService],
 })
-export class UserModule {}
+export class UsersModule {}

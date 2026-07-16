@@ -11,12 +11,12 @@ import {
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 
 import { AppModule } from './app.module'
-import { CommonExceptionFilter } from './helpers/exception-filters'
+import { CommonExceptionFilter } from './common/exception-filters'
 import {
   HttpExceptionFilter,
   ResponseInterceptor,
-} from './helpers/interceptors'
-import { logger } from './helpers/logger'
+} from './common/interceptors'
+import { logger } from './common/logger'
 
 async function bootstrap() {
   const adapter = new FastifyAdapter()

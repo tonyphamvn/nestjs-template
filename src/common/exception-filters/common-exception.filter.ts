@@ -4,7 +4,7 @@ import {
   ExceptionFilter,
   HttpException,
 } from '@nestjs/common'
-import { HttpCodeMessages } from '@src/utils/constants'
+import { HttpCodeMessages } from '@src/shared/constants'
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { WinstonLogger } from 'nest-winston'
 

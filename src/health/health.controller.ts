@@ -2,12 +2,12 @@ import { Controller, Get, Res } from '@nestjs/common'
 import { ApiExcludeEndpoint, ApiTags } from '@nestjs/swagger'
 import { FastifyReply } from 'fastify'
 
-import { AppService } from './app.service'
+import { HealthService } from './health.service'
 
 @Controller()
-@ApiTags('app')
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+@ApiTags('health')
+export class HealthController {
+  constructor(private readonly healthService: HealthService) {}
 
   @Get()
   @ApiExcludeEndpoint()
@@ -17,6 +17,6 @@ export class AppController {
 
   @Get('health')
   checkHealth() {
-    return this.appService.checkHealth()
+    return this.healthService.checkHealth()
   }
 }

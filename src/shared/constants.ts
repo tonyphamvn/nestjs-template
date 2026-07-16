@@ -1,4 +1,4 @@
-export const HttpCodeMessages = {
+export const HttpCodeMessages: Record<number, string> = {
   200: 'OK',
   201: 'Created',
   202: 'Accepted',

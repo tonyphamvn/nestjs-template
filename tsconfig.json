@@ -9,12 +9,11 @@
     "target": "ES2023",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
     "incremental": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "paths": {
-      "@src/*": ["src/*"]
+      "@src/*": ["./src/*"]
     }
   }
 }

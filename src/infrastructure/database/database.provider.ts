@@ -22,14 +22,14 @@ export const createDatabaseProvider = (
       min: 2,
       max: 20,
     },
-    entities: ['./dist/database/entities/*.js'],
-    entitiesTs: ['./src/database/entities/*.ts'],
+    entities: ['./dist/infrastructure/database/entities/*.js'],
+    entitiesTs: ['./src/infrastructure/database/entities/*.ts'],
     migrations: {
-      path: './dist/database/migrations',
-      pathTs: './src/database/migrations',
+      path: './dist/infrastructure/database/migrations',
+      pathTs: './src/infrastructure/database/migrations',
     },
     seeder: {
-      path: './dist/database/seeders',
-      pathTs: './src/database/seeders',
+      path: './dist/infrastructure/database/seeders',
+      pathTs: './src/infrastructure/database/seeders',
     },
   })

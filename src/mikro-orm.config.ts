@@ -4,7 +4,7 @@ configDotenv()
 
 export default defineConfig({
   host: process.env.DB_HOST || 'localhost',
-  port: parseInt(process.env.DB_PORT, 10) || 5432,
+  port: parseInt(process.env.DB_PORT ?? '', 10) || 5432,
   user: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASSWORD || 'postgres',
   dbName: process.env.DB_NAME || 'db_name',
@@ -15,14 +15,14 @@ export default defineConfig({
     min: 2,
     max: 20,
   },
-  entities: ['./dist/database/entities/*.js'],
-  entitiesTs: ['./src/database/entities/*.ts'],
+  entities: ['./dist/infrastructure/database/entities/*.js'],
+  entitiesTs: ['./src/infrastructure/database/entities/*.ts'],
   migrations: {
-    path: './dist/database/migrations',
-    pathTs: './src/database/migrations',
+    path: './dist/infrastructure/database/migrations',
+    pathTs: './src/infrastructure/database/migrations',
   },
   seeder: {
-    path: './dist/database/seeders',
-    pathTs: './src/database/seeders',
+    path: './dist/infrastructure/database/seeders',
+    pathTs: './src/infrastructure/database/seeders',
   },
 })

@@ -399,3 +399,5 @@ dist
 .webpack
 .serverless/**/*.zip
 logs
+
+src/infrastructure/database/migrations/*.json

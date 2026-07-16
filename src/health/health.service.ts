@@ -3,13 +3,13 @@ import { HealthCheckService, MikroOrmHealthIndicator } from '@nestjs/terminus'
 import { WinstonLogger } from 'nest-winston'
 
 @Injectable()
-export class AppService {
+export class HealthService {
   constructor(
     private logger: WinstonLogger,
     private health: HealthCheckService,
     private db: MikroOrmHealthIndicator,
   ) {
-    this.logger.setContext(AppService.name)
+    this.logger.setContext(HealthService.name)
   }
 
   checkHealth() {

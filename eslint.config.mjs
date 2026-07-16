@@ -8,7 +8,7 @@ import unusedImports from 'eslint-plugin-unused-imports'
 
 export default tseslint.config(
   {
-    ignores: ['eslint.config.mjs', 'dist/**', 'src/database/migrations/*'],
+    ignores: ['eslint.config.mjs', 'dist/**', 'src/infrastructure/database/migrations/*'],
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
