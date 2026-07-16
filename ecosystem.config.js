@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'api',
-      script: 'scripts/serve.sh',
+      script: 'src/scripts/serve.sh',
       ignore_watch: ['node_modules', 'logs'],
       watch: false,
       max_memory_restart: '1G',

@@ -10,7 +10,7 @@ services:
       - ${DB_PORT}:5432
     volumes:
       - pg_data:/var/lib/postgresql/data/pgdata
-      - ./scripts/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+      - ./src/scripts/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
     networks:
       - backend
 
@@ -19,7 +19,7 @@ services:
     volumes:
       - redis_data:/data
     ports:
-      - 6379:6379
+      - ${REDIS_PORT}:6379
     restart: always
     networks:
       - backend

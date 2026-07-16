@@ -1,8 +1,8 @@
 {
-  "name": "nest-typescript-starter",
+  "name": "create-nestjs-ts-app",
   "private": true,
-  "version": "1.0.0",
-  "description": "Nest TypeScript starter repository",
+  "version": "0.0.1",
+  "description": "NestJS + TypeScript API boilerplate (template + create-nestjs-ts-app CLI)",
   "license": "MIT",
   "scripts": {
     "build": "nest build",
@@ -29,6 +29,12 @@
   "engines": {
     "npm": ">=10.0.0",
     "node": ">=20.0.0"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/mikro-orm.config.ts"
+    ]
   },
   "dependencies": {
     "@fastify/compress": "^8.0.1",

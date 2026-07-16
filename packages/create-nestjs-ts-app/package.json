@@ -1,0 +1,46 @@
+{
+  "name": "create-nestjs-ts-app",
+  "version": "0.0.1",
+  "description": "Scaffold a NestJS + TypeScript API from the create-nestjs-ts-app boilerplate",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "create-nestjs-ts-app": "./bin/create-nestjs-ts-app.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "keywords": [
+    "nestjs",
+    "typescript",
+    "boilerplate",
+    "template",
+    "scaffold",
+    "mikro-orm",
+    "prisma",
+    "typeorm",
+    "sequelize",
+    "postgres",
+    "fastify",
+    "create-nestjs-ts-app"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonyphamvn/nestjs-template.git",
+    "directory": "packages/create-nestjs-ts-app"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.10.1",
+    "degit": "^2.8.4",
+    "giget": "^2.0.0"
+  }
+}
