@@ -6,7 +6,7 @@ const ECOSYSTEM_CONFIG = `module.exports = {
   apps: [
     {
       name: 'api',
-      script: 'dist/main.js',
+      script: 'dist/src/main.js',
       instances: 1,
       exec_mode: 'fork',
       env_production: {
@@ -59,7 +59,7 @@ export function getDeployDependencies(deploy) {
   if (deploy === 'pm2') {
     return {
       add: {
-        pm2: '^6.0.5',
+        pm2: '^7.0.3',
       },
       remove: [],
     };
@@ -84,7 +84,7 @@ export function getDeployScripts(deploy) {
   }
 
   return {
-    start: 'node dist/main',
+    start: 'node dist/src/main',
     'pm2:delete': undefined,
     'pm2:dev': undefined,
     'pm2:prod': undefined,

@@ -11,15 +11,24 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data/pgdata
       - ./src/scripts/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${DB_USER} -d ${DB_NAME}']
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
     networks:
       - backend
 
   redis:
     image: redis:7.0-alpine
-    volumes:
-      - redis_data:/data
     ports:
       - ${REDIS_PORT}:6379
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data
+    command: /bin/sh -c "redis-server --requirepass $$REDIS_PASSWORD"
     restart: always
     networks:
       - backend
